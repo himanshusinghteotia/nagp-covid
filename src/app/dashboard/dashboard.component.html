@@ -1,0 +1,38 @@
+<div class="row text-center">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 table-responsive">
+        <div class="card">
+            <br>
+            <div>
+                <img class="mb-4 center" src="assets/coronavirus.png" alt="LOGO" width="72" height="72">
+            </div>
+            <h1 class="h3 mb-3 font-weight-normal">Corona Cases</h1>
+            <div class="card-body">
+                <table class="table" *ngIf="country?.statewise && country.statewise.length">
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th class="text-secondary">Total Cases</th>
+                            <th class="text-info">Active Cases</th>
+                            <th class="text-danger">Deaths</th>
+                            <th class="text-success">Recovered</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cnty of country.statewise">
+                            <td *ngIf="cnty.state == 'Total';else notTotal" class="text-primary ">{{cnty.state}}</td>
+                            <ng-template #notTotal>
+                                <td class="text-primary" (click)="stateDetail(cnty.state)">{{cnty.state}}</td>
+                            </ng-template>
+                            <td class="text-secondary">{{cnty.confirmed}}</td>
+                            <td class="text-info">{{cnty.active}}</td>
+                            <td class="text-danger">{{cnty.deaths}}</td>
+                            <td class="text-success">{{cnty.recovered}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>

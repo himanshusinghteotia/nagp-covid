@@ -1,0 +1,12 @@
+{
+  "admin": {
+    "name": "Admin",
+    "emailId": "admin@gmail.com",
+    "password": "admin@123"
+  },
+  "news": {
+    "title": "new1",
+    "description": "this is about the breakage of loackdown by th people of Delhi and hence getting more cases.",
+    "summary": "Results in more cases and longer lock down."
+  }
+}

@@ -1,0 +1,41 @@
+<div class="row text-center">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="card">
+        <br>
+        <div>
+          <img class="mb-4 center" src="assets/coronavirus.png" alt="LOGO" width="72" height="72">
+        </div>
+        <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+        <div class="card-body">
+          <form class="form" role="form" autocomplete="off" id="formLogin" #frm="ngForm" (ngSubmit)="frm.form.valid && loginUser(frm)"
+          novalidate>
+          <div class="form-group">
+            <input #emailVal="ngModel" type="text" class="form-control" placeholder="Email" id="email" name="email" ngModel name="EmailId"
+              [ngClass]="{ 'is-invalid': frm.submitted && emailVal.invalid }" required="" required email autofocus>
+          </div>
+          <div *ngIf="frm.submitted && emailVal.invalid" class="alert alert-danger">
+            <div *ngIf="emailVal.errors.required">emailid is required.</div>
+            <div *ngIf="emailVal.errors.email">Email must be a valid email address.</div>
+          </div>
+          <div class="form-group">
+            <input #passwordVal="ngModel" type="password" class="form-control" placeholder="Password" id="pwd" ngModel name="Password"
+              required="" autocomplete="new-password" [ngClass]="{ 'is-invalid': frm.submitted && passwordVal.invalid }" required minlength="8">
+          </div>
+          <div *ngIf="frm.submitted && passwordVal.invalid" class="alert alert-danger">
+            <div *ngIf="passwordVal.errors?.minlength">
+              password length must be atleast 8.
+            </div>
+            <div *ngIf="passwordVal.errors.required">
+              password is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>

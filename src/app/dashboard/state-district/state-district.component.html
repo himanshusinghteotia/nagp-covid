@@ -1,0 +1,40 @@
+<div class="row text-center">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 table-responsive">
+        <div class="card">
+            <br>
+            <div>
+                <img class="mb-4 center" src="assets/coronavirus.png" alt="LOGO" width="72" height="72">
+            </div>
+            <h1 class="h3 mb-3 font-weight-normal">Corona Cases</h1>
+            <div class="card-body">
+                <table class="table" *ngIf="(map | keyvalue)?.length > 0">
+                    <thead>
+                        <tr>
+                            <th>Districts</th>
+                            <th class="text-secondary">Total Cases</th>
+                            <th class="text-info">Active Cases</th>
+                            <th class="text-danger">Deaths</th>
+                            <th class="text-success">Recovered</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let district of map | keyvalue">
+                            <td>{{district.key}}</td>
+                            <td class="text-secondary">{{district.value.confirmed}}</td>
+                            <td class="text-info">{{district.value.active}}</td>
+                            <td class="text-danger">{{district.value.deceased}}</td>
+                            <td class="text-success">{{district.value.recovered}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table" *ngIf="(map | keyvalue)?.length == 0">
+                    <tr class="bg-primary text-white">
+                        No case till now.
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>

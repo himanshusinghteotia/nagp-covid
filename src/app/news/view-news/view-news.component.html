@@ -1,0 +1,18 @@
+<div class="table-responsive">
+    <table class="table table-hover" *ngIf="news && news.length">
+        <thead>
+            <tr>
+                <th title="name">Title</th>
+                <th>Description</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let n of news">
+                <td>{{n.title}}</td>
+                <td>{{n.description}}</td>
+                <td>{{n.summary}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-inverse navbar-expand-sm navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">NAGP 2020</a>
+      <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarsExample03"
+          aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav mr-auto" [hidden]="userAndAdminCheck()">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="viewnews">View News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="precautions">Precautions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addnews">Add News</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-auto" [hidden]="!userAndAdminCheck()">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="viewnews">View News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="precautions">Precautions</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav" [hidden]="!hideCheck()">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login">Login</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav" id="logout" [hidden]="hideCheck()">
+          <li (click)="logout()" class="nav-item">
+            <a class="nav-link" routerLink="">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>

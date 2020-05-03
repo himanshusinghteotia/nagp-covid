@@ -1,0 +1,37 @@
+<div class="row text-center">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="card">
+            <br>
+            <div>
+                <img class="mb-4 center" src="assets/sign.gif" alt="LOGO" width="72" height="72">
+            </div>
+            <h1 class="h3 mb-3 font-weight-bold">STAY HOME.SAVE LIVES.</h1>
+            <h6>Help stop coronavirus</h6>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <ol>
+                            <li *ngFor="let instruction of instructions" innerHtml="{{instruction.major | boldText}} {{instruction.minor}}"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body text-left font-weight-bold">
+                To prevent the spread of COVID-19:
+                <ul class="row text-left font-weight-light small">
+                    <li>Clean your hands often. Use soap and water, or an alcohol-based hand rub.</li>
+                    <li>Maintain a safe distance from anyone who is coughing or sneezing.</li>
+                    <li>Don’t touch your eyes, nose or mouth.</li>
+                    <li>Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.</li>
+                    <li>Stay home if you feel unwell.</li>
+                    <li>If you have a fever, a cough, and difficulty breathing, seek medical attention. Call in advance.</li>
+                    <li>Follow the directions of your local health authority.</li>
+                    <li>Avoiding unneeded visits to medical facilities allows healthcare systems to operate more effectively, therefore protecting you and others.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>

@@ -1,0 +1,16 @@
+ol {
+    list-style: none;
+    counter-reset: li;
+}
+ol > li::before {
+    content: counter(li);
+    margin: 10px;
+    color: red;
+    font-weight: bold;
+}
+ol > li {
+    counter-increment: li;
+    text-align: left;
+    height: 20px;
+    vertical-align: middle;
+}
